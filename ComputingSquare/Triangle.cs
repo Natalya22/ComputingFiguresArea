@@ -8,12 +8,8 @@ namespace ComputingArea
     {
         public Triangle(double sideA, double sideB, double sideC)
         {
-            if (sideA < Constants.minLength)
-                throw new ArgumentException("Неверно указана сторона.", nameof(sideA));
-            if (sideB < Constants.minLength)
-                throw new ArgumentException("Неверно указана сторона.", nameof(sideB));
-            if (sideC < Constants.minLength)
-                throw new ArgumentException("Неверно указана сторона.", nameof(sideC));
+            if (sideA <= 0 || sideB <= 0 || sideC <= 0)
+                throw new ArgumentException("Неверно указана длина.");
 
             if (   (sideA >= sideB + sideC)
                 || (sideB >= sideA + sideC)

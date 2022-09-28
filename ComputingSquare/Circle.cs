@@ -6,7 +6,7 @@ namespace ComputingArea
     {
         public Circle(double radius)
         {
-            if (radius < Constants.minLength)
+            if (radius <= 0)
                 throw new ArgumentException("Неверно указан радиус круга.", nameof(radius));
             Radius = radius;
         }
